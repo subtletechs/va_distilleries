@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- VA Padukka Warehouse -->
+        <record id="secondary_warehouse_va_distillers" model="stock.warehouse">
+            <field name="name">VA Distilleries (Pvt) Ltd - Padukka</field>
+            <field name="code">VA-PD</field>
+            <field name="buy_to_resupply">1</field>
+        </record>
+    </data>
+</odoo>
