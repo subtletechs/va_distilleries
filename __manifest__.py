@@ -9,7 +9,8 @@
         'purchase',
     ],
     'data': [
-        'data/warehouses.xml'
+        'data/warehouses.xml',
+        'stock/stock_move.xml',
     ],
 
     'installable': True,

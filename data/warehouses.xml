@@ -6,6 +6,7 @@
             <field name="name">VA Distilleries (Pvt) Ltd - Padukka</field>
             <field name="code">VA-PD</field>
             <field name="buy_to_resupply">1</field>
+            <field name="warehouses">padukka</field>
         </record>
     </data>
 </odoo>
