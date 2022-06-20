@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Mobile Location -->
+        <record id="mobile_location_va_distillers" model="stock.location">
+            <field name="name">Default Mobile Location</field>
+            <field name="usage">internal</field>
+            <field name="posz">1</field>
+            <field name="mobile_location">True</field>
+            <field name="location_id" model="stock.location"
+                eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+    </data>
+</odoo>

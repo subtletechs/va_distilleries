@@ -10,6 +10,7 @@
     ],
     'data': [
         'data/warehouses.xml',
+        'data/locations.xml',
         'stock/stock_move.xml',
     ],
 
