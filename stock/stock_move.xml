@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <!-- stock location-->
+    <!-- [VA|IMP|-002] - Update Inventory Locations -->
+    <record id="view_location_form_inherit_va" model="ir.ui.view">
+        <field name="name">stock.location.form.form.view.inherit.va</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='usage']" position="after">
+                <field name="mobile_location"/>
+                <field name="main_location"/>
+            </xpath>
+        </field>
+    </record>
+
     <!-- stock warehouse-->
     <!-- [VA|IMP|-002] - Update Warehouse -->
     <record id="view_warehouse_inherit_va" model="ir.ui.view">
