@@ -11,6 +11,7 @@
     'data': [
         'data/warehouses.xml',
         'data/locations.xml',
+        'data/receipts_data.xml',
         'stock/stock_move.xml',
     ],
 
