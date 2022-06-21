@@ -22,11 +22,39 @@
             <field name="warehouse_id" ref="va_distilleries.secondary_warehouse_va_distillers"/>
             <field name="show_operations">0</field>
             <field name="show_reserved">0</field>
-            <field name="use_create_lots">1</field>
-            <field name="use_existing_lots">0</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
             <field name="default_location_src_id" model="stock.location"
                    eval="obj().env.ref('va_distilleries.secondary_warehouse_va_distillers').lot_stock_id.id"/>
             <field name="default_location_dest_id" ref="va_distilleries.mobile_location_va_distillers"/>
+        </record>
+
+
+        <!-- from Borelasgamuwa warehouse;Mobile Location to Borelasgamuwa warehouse;Stores Location inventory operation Sequence -->
+        <record id="inventory_operation_boralasgamuwa_mobile_to_stores" model="ir.sequence">
+            <field name="name">Mobile to Stores</field>
+            <field name="code"></field>
+            <field name="implementation">standard</field>
+            <field name="prefix">BS-IN</field>
+            <field name="padding">5</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+        </record>
+
+        <!-- from Borelasgamuwa warehouse;Mobile Location to Borelasgamuwa warehouse;Stores Location inventory operation -->
+        <record id="stocking_picking_type_internal_boralasgamuwa_mobile_to_stores" model="stock.picking.type">
+            <field name="name">Mobile to Stores</field>
+            <field name="code">internal</field>
+            <field name="sequence_id" ref="va_distilleries.inventory_operation_boralasgamuwa_mobile_to_stores"/>
+            <field name="sequence_code">BS-IN</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="show_operations">0</field>
+            <field name="show_reserved">0</field>
+            <field name="use_create_lots">0</field>
+            <field name="use_existing_lots">1</field>
+            <field name="default_location_src_id" ref="va_distilleries.mobile_location_va_distillers"/>
+            <field name="default_location_dest_id" model="stock.location"
+                   eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
         </record>
 
     </data>
