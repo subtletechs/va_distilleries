@@ -14,7 +14,8 @@
         'data/receipts_data.xml',
         'stock/stock_move.xml',
         'stock/stock_picking_view.xml',
-        'base/res_partner_view.xml'
+        'base/res_partner_view.xml',
+        'purchase/purchase_views.xml',
     ],
 
     'installable': True,

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view for Purchase order -->
+    <record id="purchase_order_form_inherit_union_colombo" model="ir.ui.view">
+        <field name="name">purchase.order.form.view.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- [VA|IMP|-007]- New approval level add to the RfQ -->
+            <xpath expr="//button[@name='print_quotation']" position="after">
+                <button name="action_approve"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}"
+                        string="Approve " type="object"
+                        groups="base.group_user" class="oe_highlight"/>
+            </xpath>
+            <!-- Confirm button -->
+            <xpath expr="//button[@id='draft_confirm']" position="attributes">
+                <attribute name="states">initial_approve</attribute>
+            </xpath>
+            <!-- Cancel button -->
+            <xpath expr="//button[@name='button_cancel']" position="attributes">
+                <attribute name="states">draft,initial_approve,to approve,sent,purchase</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
