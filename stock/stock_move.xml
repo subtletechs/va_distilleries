@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <!-- stock picking -->
+    <record id="view_picking_form_inherit_va" model="ir.ui.view">
+        <field name="name">stock.picking.form.view.inherit.va</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <!-- [VA|IMP|-004]- Add new approval level to all operations-->
+            <xpath expr="//button[@name='button_validate']" position="after">
+                <button name="action_approve"
+                        attrs="{'invisible': [('state', '!=', 'assigned')]}"
+                        string="Approve " type="object"
+                        groups="base.group_user" class="oe_highlight"/>
+            </xpath>
+            <!-- Validate button -->
+            <xpath expr="//button[@name='button_validate']" position="attributes">
+                <attribute name="attrs">{'invisible': [('state', '!=', 'approved')]}</attribute>
+            </xpath>
+            <!-- Cancel button -->
+            <xpath expr="//button[@name='action_cancel']" position="attributes">
+                <attribute name="attrs">{'invisible': [('state', 'not in', ('assigned', 'confirmed', 'draft', 'waiting', 'approved'))]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <!-- stock location-->
     <!-- [VA|IMP|-002] - Update Inventory Locations -->
     <record id="view_location_form_inherit_va" model="ir.ui.view">

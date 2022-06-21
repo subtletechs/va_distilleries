@@ -7,6 +7,18 @@ from odoo.exceptions import UserError, ValidationError
 from collections import defaultdict
 
 
+class Picking(models.Model):
+    _inherit = "stock.picking"
+
+    # [VA|IMP|-004]- Add new approval level to all operations
+    state = fields.Selection(selection_add=[('approved', 'Approved'), ('done',)])
+
+    def action_approve(self):
+        self.write({
+            'state': 'approved'
+        })
+
+
 class Location(models.Model):
     _inherit = "stock.location"
 
