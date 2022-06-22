@@ -11,7 +11,7 @@
             <!-- [VA|IMP|-007]- New approval level add to the RfQ -->
             <xpath expr="//button[@name='print_quotation']" position="after">
                 <button name="action_approve"
-                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}"
                         string="Approve " type="object"
                         groups="base.group_user" class="oe_highlight"/>
             </xpath>
