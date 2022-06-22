@@ -9,3 +9,9 @@ class ResPartner(models.Model):
     vendor_category = fields.Selection([('local', 'Local'), ('foreign', 'Foreign')], string='Category',
                                        default='local')
 
+    # VA|IMP|-008 Is Customer ? Is Vendor ? Separation
+    is_customer = fields.Boolean(string="Is Customer", default=False)
+    customer_id = fields.Char(string="Customer ID")
+    is_supplier = fields.Boolean(string="Is Supplier", default=False)
+    supplier_id = fields.Char(string="Supplier ID")
+
