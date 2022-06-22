@@ -6,6 +6,6 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     # [VA|IMP|-006] - Vendor must be identified on local and foreign
-    vendor_category = fields.Selection([('local', 'Local'), ('foreign', 'Foreign')], string='Vendor',
+    vendor_category = fields.Selection([('local', 'Local'), ('foreign', 'Foreign')], string='Category',
                                        default='local')
 
