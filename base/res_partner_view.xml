@@ -11,16 +11,16 @@
             </xpath>
 
             <!-- VA|IMP|-008 Is Customer ? Is Vendor ? Separation-->
-            <xpath expr="//group[@name='sale']/field[@name='user_id']" position="before">
-                <field name="is_customer"/>
-                <field name="customer_id"
-                       attrs="{'invisible': [('is_customer', '!=', True)], 'required':[('is_customer', '=', True)]}"/>
-            </xpath>
-            <xpath expr="//group[@name='purchase']/field[@name='property_supplier_payment_term_id']" position="before">
-                <field name="is_supplier"/>
-                <field name="supplier_id"
-                       attrs="{'invisible': [('is_supplier', '!=', True)] , 'required':[('is_supplier', '=', True)]}"/>
-            </xpath>
+<!--            <xpath expr="//group[@name='sale']/field[@name='user_id']" position="before">-->
+<!--                <field name="is_customer"/>-->
+<!--                <field name="customer_id"-->
+<!--                       attrs="{'invisible': [('is_customer', '!=', True)], 'required':[('is_customer', '=', True)]}"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//group[@name='purchase']/field[@name='property_supplier_payment_term_id']" position="before">-->
+<!--                <field name="is_supplier"/>-->
+<!--                <field name="supplier_id"-->
+<!--                       attrs="{'invisible': [('is_supplier', '!=', True)] , 'required':[('is_supplier', '=', True)]}"/>-->
+<!--            </xpath>-->
         </field>
     </record>
 </odoo>
