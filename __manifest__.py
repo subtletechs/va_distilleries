@@ -16,6 +16,7 @@
         'stock/stock_picking_view.xml',
         'base/res_partner_view.xml',
         'purchase/purchase_views.xml',
+        'product/product_views.xml',
     ],
 
     'installable': True,
