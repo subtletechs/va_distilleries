@@ -13,6 +13,10 @@
                         string="Approve " type="object"
                         groups="base.group_user" class="oe_highlight"/>
             </xpath>
+            <!-- Add new status to view -->
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="statusbar_visible">draft,confirmed,assigned,approved,done</attribute>
+            </xpath>
             <!-- Validate button -->
             <xpath expr="//button[@name='button_validate']" position="attributes">
                 <attribute name="attrs">{'invisible': [('state', '!=', 'approved')]}</attribute>
